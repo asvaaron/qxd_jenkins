@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'gcc lala.c -o lala'
+                sh 'cd src'
+		sh 'cmake ..'
+		sh 'make'
+
             }
         }
 	stage('running') {
